@@ -1,10 +1,10 @@
-# coding: utf-8
+#coding: utf-8
 import numpy as np
 from LeastMeanSquare import LMSRegression
 from sklearn import datasets
 from sklearn import linear_model
 
-## age sex bodyExp blood s1 s2 s3 s4 s5 s6
+# age sex bodyExp blood s1 s2 s3 s4 s5 s6
 diabetes=datasets.load_diabetes()
 
 x_train=diabetes.data[:-20]
@@ -12,14 +12,12 @@ y_train=diabetes.target[:-20]
 x_test=diabetes.data[-20:]
 y_test=diabetes.target[-20:]
 
-linreg = LMSRegression()
-linreg.train(x_train,y_train)
-print(linreg.getTheta())
 
 
-# linreg = linear_model.LinearRegression();
-# linreg.fit(x_train,y_train)
-# print(linreg.coef_ )
+
+linreg = linear_model.LinearRegression();
+linreg.fit(x_train,y_train)
+print(linreg.coef_ )
 
 
 import matplotlib.pyplot as plt
